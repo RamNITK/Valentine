@@ -26,4 +26,5 @@ function enterSite() {
 
   // Hide overlay
   document.getElementById('name-overlay').style.display = 'none';
+  return true; // allow form to submit to Netlify
 }
