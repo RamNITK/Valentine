@@ -7,54 +7,34 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<!-- Name + Contact Form -->
 <div id="name-overlay">
-  <form name="nameEntry" method="POST" data-netlify="true" onsubmit="return enterSite()">
-    <input type="hidden" name="form-name" value="nameEntry" />
+  <form id="fullForm">
     <div class="name-box">
       <h2>Welcome! What's your name? 💖</h2>
       <input type="text" name="visitorName" id="visitorName" placeholder="Enter your name" required />
-      <button type="submit">Enter</button>
+
+      <h3 style="margin-top:20px;">Optional – If interested in connecting</h3>
+      <input type="text" name="instagram" placeholder="Instagram ID (optional)" />
+      <input type="tel" name="phone" placeholder="Phone Number (optional)" />
+      
+      <button type="submit">Enter & Submit</button>
     </div>
   </form>
 </div>
 
+<!-- Main Content -->
+<div class="hero">
+  <h1 id="welcome-message">Will You Be My Valentine?</h1>
+  <img src="assets/heart.png" alt="heart" class="hero-img" />
+</div>
 
-  <!-- Main Content -->
-  <div class="hero">
-    <h1 id="welcome-message">Will You Be My Valentine?</h1>
-    <img src="assets/heart.png" alt="heart" class="hero-img" />
-  </div>
+<div class="quote-box">
+  <p id="quote">Click below to get a love quote 💘</p>
+  <button onclick="newQuote()">💌 New Quote</button>
+</div>
 
-  <div class="quote-box">
-    <p id="quote">Click below to get a love quote 💘</p>
-    <button onclick="newQuote()">💌 New Quote</button>
-  </div>
-
-  <!-- <form name="valentineForm" method="POST" data-netlify="true">
-    <h2>If you're interested in connecting 💌</h2>
-    <input type="text" name="instagram" placeholder="Instagram ID (required)" required />
-    <input type="tel" name="phone" placeholder="Phone Number (optional)" />
-    <button type="submit">Send ❤️</button>
-  </form> -->
-
-  <form name="valentineForm" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="valentineForm" />
-  <h2>If you're interested in connecting 💌</h2>
-  <input type="text" name="instagram" placeholder="Instagram ID (required)" required />
-  <input type="tel" name="phone" placeholder="Phone Number (optional)" />
-  <button type="submit">Send ❤️</button>
-</form>
-<!-- Netlify needs these hidden forms to recognize them -->
-<form name="nameEntry" netlify hidden>
-  <input type="text" name="visitorName" />
-</form>
-
-<form name="valentineForm" netlify hidden>
-  <input type="text" name="instagram" />
-  <input type="tel" name="phone" />
-</form>
-
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
