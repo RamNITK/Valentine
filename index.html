@@ -30,12 +30,21 @@
     <button onclick="newQuote()">💌 New Quote</button>
   </div>
 
-  <form name="valentineForm" method="POST" data-netlify="true">
+  <!-- <form name="valentineForm" method="POST" data-netlify="true">
     <h2>If you're interested in connecting 💌</h2>
     <input type="text" name="instagram" placeholder="Instagram ID (required)" required />
     <input type="tel" name="phone" placeholder="Phone Number (optional)" />
     <button type="submit">Send ❤️</button>
-  </form>
+  </form> -->
+
+  <form name="valentineForm" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="valentineForm" />
+  <h2>If you're interested in connecting 💌</h2>
+  <input type="text" name="instagram" placeholder="Instagram ID (required)" required />
+  <input type="tel" name="phone" placeholder="Phone Number (optional)" />
+  <button type="submit">Send ❤️</button>
+</form>
+
 
   <script src="script.js"></script>
 </body>
