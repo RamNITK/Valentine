@@ -7,14 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Overlay for Name Input -->
-  <div id="name-overlay">
+<div id="name-overlay">
+  <form name="nameEntry" method="POST" data-netlify="true" onsubmit="return enterSite()">
+    <input type="hidden" name="form-name" value="nameEntry" />
     <div class="name-box">
       <h2>Welcome! What's your name? 💖</h2>
-      <input type="text" id="visitorName" placeholder="Enter your name" required />
-      <button onclick="enterSite()">Enter</button>
+      <input type="text" name="visitorName" id="visitorName" placeholder="Enter your name" required />
+      <button type="submit">Enter</button>
     </div>
-  </div>
+  </form>
+</div>
+
 
   <!-- Main Content -->
   <div class="hero">
