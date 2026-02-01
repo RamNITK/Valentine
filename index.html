@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Be My Valentine?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="hero">
+    <h1>Will You Be My Valentine?</h1>
+    <img src="assets/heart.png" alt="heart" class="hero-img" />
+  </div>
+
+  <div class="quote-box">
+    <p id="quote">Click below to get a love quote 💘</p>
+    <button onclick="newQuote()">💌 New Quote</button>
+  </div>
+
+  <form name="valentineForm" method="POST" data-netlify="true">
+    <h2>If you're interested, leave your info ❤️</h2>
+    <input name="name" type="text" placeholder="Your Name" required />
+    <input name="instagram" type="text" placeholder="Instagram ID (optional)" />
+    <input name="phone" type="tel" placeholder="Phone (optional)" />
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
