@@ -44,6 +44,15 @@
   <input type="tel" name="phone" placeholder="Phone Number (optional)" />
   <button type="submit">Send ❤️</button>
 </form>
+<!-- Netlify needs these hidden forms to recognize them -->
+<form name="nameEntry" netlify hidden>
+  <input type="text" name="visitorName" />
+</form>
+
+<form name="valentineForm" netlify hidden>
+  <input type="text" name="instagram" />
+  <input type="tel" name="phone" />
+</form>
 
 
   <script src="script.js"></script>
