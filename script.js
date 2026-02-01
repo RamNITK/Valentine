@@ -1,5 +1,5 @@
 // Your Google Apps Script URL
-const FORM_URL = "https://script.google.com/macros/library/d/19LANoe5kuHJG2XXSoWsTn1rB-BL3FWEirgNGyY5BK5AwjQyxU2BDr6N3/1";
+const FORM_URL = "https://script.google.com/macros/s/AKfycbzoPWVZeTx8DZBMSftGqv--kAQvPt3c3avDOOsUwcL-voW8Uy2SFHVpY1HoWbgma1qy3Q/exec";
 
 // Handle Name Entry (Step 1)
 document.getElementById("nameForm").addEventListener("submit", function (e) {
