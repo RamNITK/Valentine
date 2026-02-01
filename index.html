@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<div id="name-overlay">
-  <div class="name-box">
-    <h2>Welcome! What's your name? 💖</h2>
-    <input type="text" id="visitorName" placeholder="Enter your name" required />
-    <button onclick="enterSite()">Enter</button>
-  </div>
-</div>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Be My Valentine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Will You Be My Valentine?</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Overlay for Name Input -->
+  <div id="name-overlay">
+    <div class="name-box">
+      <h2>Welcome! What's your name? 💖</h2>
+      <input type="text" id="visitorName" placeholder="Enter your name" required />
+      <button onclick="enterSite()">Enter</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
   <div class="hero">
-    <h1>Will You Be My Valentine?</h1>
+    <h1 id="welcome-message">Will You Be My Valentine?</h1>
     <img src="assets/heart.png" alt="heart" class="hero-img" />
   </div>
 
@@ -26,11 +28,10 @@
   </div>
 
   <form name="valentineForm" method="POST" data-netlify="true">
-    <h2>If you're interested, leave your info ❤️</h2>
-    <input name="name" type="text" placeholder="Your Name" required />
-    <input name="instagram" type="text" placeholder="Instagram ID (optional)" />
-    <input name="phone" type="tel" placeholder="Phone (optional)" />
-    <button type="submit">Submit</button>
+    <h2>If you're interested in connecting 💌</h2>
+    <input type="text" name="instagram" placeholder="Instagram ID (required)" required />
+    <input type="tel" name="phone" placeholder="Phone Number (optional)" />
+    <button type="submit">Send ❤️</button>
   </form>
 
   <script src="script.js"></script>
