@@ -1,32 +1,58 @@
 // Your Google Apps Script URL
 const FORM_URL = "https://script.google.com/macros/library/d/19LANoe5kuHJG2XXSoWsTn1rB-BL3FWEirgNGyY5BK5AwjQyxU2BDr6N3/1";
 
-document.getElementById("fullForm").addEventListener("submit", function (e) {
+// Handle Name Entry (Step 1)
+document.getElementById("nameForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const form = e.target;
-  const formData = new FormData(form);
-  const name = formData.get("visitorName").trim();
-
+  const name = document.getElementById("visitorName").value.trim();
   if (!name) {
     alert("Please enter your name!");
     return;
   }
 
-  // Send to Google Apps Script
+  // Send only name to Sheet
   fetch(FORM_URL, {
     method: "POST",
     mode: "no-cors",
-    body: new URLSearchParams(formData)
+    body: new URLSearchParams({ visitorName: name })
   });
 
-  // Optional: show a thank you message
   localStorage.setItem("visitorName", name);
   document.getElementById("welcome-message").innerText = `Welcome, ${name}! 💖`;
   document.getElementById("name-overlay").style.display = "none";
 });
 
-// Love quotes
+// Handle Interest Form (Step 2)
+document.getElementById("interestForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = localStorage.getItem("visitorName");
+  const formData = new FormData(e.target);
+  const insta = formData.get("instagram").trim();
+  const phone = formData.get("phone")?.trim();
+
+  if (!name || !insta) {
+    alert("Instagram is required. Name must be set.");
+    return;
+  }
+
+  // Send name + instagram + phone to update same row
+  fetch(FORM_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: new URLSearchParams({
+      visitorName: name,
+      instagram: insta,
+      phone: phone || ""
+    })
+  });
+
+  alert("Thank you! Your info was sent 💖");
+  e.target.reset();
+});
+
+// Love Quotes
 const quotes = [
   "You stole my heart, but I'll let you keep it 💘",
   "Roses are red, violets are blue, this Valentine’s Day, I choose you ❤️",
@@ -39,3 +65,4 @@ function newQuote() {
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
   document.getElementById('quote').innerText = quote;
 }
+
