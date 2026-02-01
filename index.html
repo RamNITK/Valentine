@@ -8,18 +8,13 @@
 </head>
 <body>
 
-<!-- Name + Contact Form -->
+<!-- Step 1: Name Input Overlay -->
 <div id="name-overlay">
-  <form id="fullForm">
+  <form id="nameForm">
     <div class="name-box">
       <h2>Welcome! What's your name? 💖</h2>
       <input type="text" name="visitorName" id="visitorName" placeholder="Enter your name" required />
-
-      <h3 style="margin-top:20px;">Optional – If interested in connecting</h3>
-      <input type="text" name="instagram" placeholder="Instagram ID (optional)" />
-      <input type="tel" name="phone" placeholder="Phone Number (optional)" />
-      
-      <button type="submit">Enter & Submit</button>
+      <button type="submit">Enter</button>
     </div>
   </form>
 </div>
@@ -33,6 +28,16 @@
 <div class="quote-box">
   <p id="quote">Click below to get a love quote 💘</p>
   <button onclick="newQuote()">💌 New Quote</button>
+</div>
+
+<!-- Step 2: Interest Form -->
+<div id="interest-section">
+  <h2>If you're interested in connecting 💌</h2>
+  <form id="interestForm">
+    <input type="text" name="instagram" placeholder="Instagram ID (required)" required />
+    <input type="tel" name="phone" placeholder="Phone Number (optional)" />
+    <button type="submit">Send ❤️</button>
+  </form>
 </div>
 
 <script src="script.js"></script>
